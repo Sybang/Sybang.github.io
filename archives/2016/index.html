@@ -2,8 +2,10 @@
 
 
 
+  
 
-<html class="theme-next mist">
+
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -24,6 +26,10 @@
 
 
 
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -95,8 +101,8 @@
   var CONFIG = {
     scheme: 'Mist',
     sidebar: {"position":"left","display":"hide"},
-    fancybox: false,
-    motion: false,
+    fancybox: true,
+    motion: true,
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -383,11 +389,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
@@ -420,6 +426,8 @@
 
 
 
+  
+
 
 
   
@@ -437,6 +445,9 @@
   
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
 
   
 
@@ -451,6 +462,10 @@
   
 
   
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
   
 
 
