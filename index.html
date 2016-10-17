@@ -267,107 +267,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/17/我祖国很伟大/" itemprop="url">
-                   我祖国很伟大
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-17T15:21:34+08:00" content="2016-10-17">
-              2016-10-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/17/我祖国很伟大/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/我祖国很伟大/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###我的祖国真心伟大<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">960万平方公里</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/10/17/java观察者模式/" itemprop="url">
                   java观察者模式
                 </a>
@@ -419,7 +318,10 @@
       
         
           
-            
+            <p>###创建观察者对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Observable;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zhangfeng on 2016/10/17.</div><div class="line"> * 爷爷,消息发布者</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Grandpa</span> <span class="keyword">extends</span> <span class="title">Observable</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> String mName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Grandpa</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        mName = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 向葫芦娃发出求救消息</div><div class="line">     * <span class="doctag">@param</span> msg</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMsg</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">        setChanged();</div><div class="line">        notifyObservers(msg);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        mName = name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###创建被观察者对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.util.Log;</div><div class="line"><span class="keyword">import</span> java.util.Observable;</div><div class="line"><span class="keyword">import</span> java.util.Observer;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zhangfeng on 2016/10/17.</div><div class="line"> * 葫芦娃,消息接收者</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LagenariaSicerariaChildren</span> <span class="keyword">implements</span> <span class="title">Observer</span> </span>&#123;</div><div class="line">    String mName;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LagenariaSicerariaChildren</span><span class="params">(String name)</span></span>&#123;</div><div class="line">        mName = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 接收到爷爷的求救消息</div><div class="line">     * <span class="doctag">@param</span> observable</div><div class="line">     * <span class="doctag">@param</span> data</div><div class="line">     */</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Observable observable, Object data)</span> </span>&#123;</div><div class="line">        Grandpa writer;</div><div class="line">        <span class="keyword">if</span> (observable <span class="keyword">instanceof</span> Grandpa) &#123;</div><div class="line">            writer = (Grandpa) observable;</div><div class="line">            Log.i(<span class="string">"----"</span>,getName() + <span class="string">"收到"</span> + writer.getName() + <span class="string">" 的求救: "</span> + data.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mName;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        mName = name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>####测试<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//爷爷出厂</span></div><div class="line">Grandpa grandpa = <span class="keyword">new</span> Grandpa(<span class="string">"爷爷"</span>);</div><div class="line"><span class="comment">//种下一颗葫芦籽</span></div><div class="line">LagenariaSicerariaChildren penhuo = <span class="keyword">new</span> LagenariaSicerariaChildren(<span class="string">"喷火娃"</span>);</div><div class="line"><span class="comment">//再种一颗葫芦籽</span></div><div class="line">LagenariaSicerariaChildren penshui = <span class="keyword">new</span> LagenariaSicerariaChildren(<span class="string">"喷水娃"</span>);</div><div class="line"><span class="comment">//葫芦娃认亲(爷爷)</span></div><div class="line">grandpa.addObserver(penhuo);</div><div class="line">grandpa.addObserver(penshui);</div><div class="line"><span class="comment">//爷爷有危险向葫芦娃发出求救</span></div><div class="line">grandpa.sendMsg(<span class="string">"孩儿们,蛇精来了,快来救我!"</span>);</div></pre></td></tr></table></figure></p>
+
           
         
       
@@ -488,7 +390,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
