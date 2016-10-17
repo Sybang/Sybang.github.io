@@ -93,7 +93,7 @@
 <meta property="og:description" content="&amp;#x521B;&amp;#x5EFA;&amp;#x89C2;&amp;#x5BDF;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61;
 12345678910111213141516171819202122232425262728293031import java.util.Observable;/** * Created by zhangfeng on 2016/10/17. * &amp;#x7237;&amp;#x7237;">
 <meta property="og:image" content="https://sybang.github.io/2016/10/17/java_design_model/huluwa.jpg">
-<meta property="og:updated_time" content="2016-10-17T08:13:11.000Z">
+<meta property="og:updated_time" content="2016-10-17T08:19:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java观察者模式">
 <meta name="twitter:description" content="&amp;#x521B;&amp;#x5EFA;&amp;#x89C2;&amp;#x5BDF;&amp;#x8005;&amp;#x5BF9;&amp;#x8C61;
@@ -327,6 +327,9 @@
 </li>
 <li><p>&#x6D4B;&#x8BD5;</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&#x7237;&#x7237;&#x51FA;&#x5382;</span></div><div class="line">Grandpa grandpa = <span class="keyword">new</span> Grandpa(<span class="string">&quot;&#x7237;&#x7237;&quot;</span>);</div><div class="line"><span class="comment">//&#x79CD;&#x4E0B;&#x4E00;&#x9897;&#x846B;&#x82A6;&#x7C7D;</span></div><div class="line">LagenariaSicerariaChildren penhuo = <span class="keyword">new</span> LagenariaSicerariaChildren(<span class="string">&quot;&#x55B7;&#x706B;&#x5A03;&quot;</span>);</div><div class="line"><span class="comment">//&#x518D;&#x79CD;&#x4E00;&#x9897;&#x846B;&#x82A6;&#x7C7D;</span></div><div class="line">LagenariaSicerariaChildren penshui = <span class="keyword">new</span> LagenariaSicerariaChildren(<span class="string">&quot;&#x55B7;&#x6C34;&#x5A03;&quot;</span>);</div><div class="line"><span class="comment">//&#x846B;&#x82A6;&#x5A03;&#x8BA4;&#x4EB2;(&#x7237;&#x7237;)</span></div><div class="line">grandpa.addObserver(penhuo);</div><div class="line">grandpa.addObserver(penshui);</div><div class="line"><span class="comment">//&#x7237;&#x7237;&#x6709;&#x5371;&#x9669;&#x5411;&#x846B;&#x82A6;&#x5A03;&#x53D1;&#x51FA;&#x6C42;&#x6551;</span></div><div class="line">grandpa.sendMsg(<span class="string">&quot;&#x5B69;&#x513F;&#x4EEC;,&#x86C7;&#x7CBE;&#x6765;&#x4E86;,&#x5FEB;&#x6765;&#x6551;&#x6211;!&quot;</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#x55B7;&#x6C34;&#x5A03;&#x6536;&#x5230;&#x7237;&#x7237; &#x7684;&#x6C42;&#x6551;: &#x5B69;&#x513F;&#x4EEC;,&#x86C7;&#x7CBE;&#x6765;&#x4E86;,&#x5FEB;&#x6765;&#x6551;&#x6211;!</div><div class="line">&#x55B7;&#x706B;&#x5A03;&#x6536;&#x5230;&#x7237;&#x7237; &#x7684;&#x6C42;&#x6551;: &#x5B69;&#x513F;&#x4EEC;,&#x86C7;&#x7CBE;&#x6765;&#x4E86;,&#x5FEB;&#x6765;&#x6551;&#x6211;!</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
