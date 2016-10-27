@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x4E0A;&amp;#x4E00;&amp;#x7BC7;&amp;#x6211;&amp;#x4EEC;&amp;#x4E86;&amp;#x89E3;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;view&amp;#x7528;&amp;#x6237;&amp;#x5706;&amp;#x5F27;&amp;#x5B9E;&amp;#x73B0;&amp;#x8BA1;&amp;#x6B65;view,&amp;#x4ECA;&amp;#x5929;&amp;#x6211;&amp;#x4EEC;&amp;#x7EE7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义view之_____启动页广告倒计时">
+<meta property="og:url" content="https://sybang.github.io/2016/10/27/countzero/index.html">
+<meta property="og:site_name" content="Melaka blog">
+<meta property="og:description" content="&amp;#x4E0A;&amp;#x4E00;&amp;#x7BC7;&amp;#x6211;&amp;#x4EEC;&amp;#x4E86;&amp;#x89E3;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;view&amp;#x7528;&amp;#x6237;&amp;#x5706;&amp;#x5F27;&amp;#x5B9E;&amp;#x73B0;&amp;#x8BA1;&amp;#x6B65;view,&amp;#x4ECA;&amp;#x5929;&amp;#x6211;&amp;#x4EEC;&amp;#x7EE7">
+<meta property="og:updated_time" content="2016-10-27T12:45:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义view之_____启动页广告倒计时">
+<meta name="twitter:description" content="&amp;#x4E0A;&amp;#x4E00;&amp;#x7BC7;&amp;#x6211;&amp;#x4EEC;&amp;#x4E86;&amp;#x89E3;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;view&amp;#x7528;&amp;#x6237;&amp;#x5706;&amp;#x5F27;&amp;#x5B9E;&amp;#x73B0;&amp;#x8BA1;&amp;#x6B65;view,&amp;#x4ECA;&amp;#x5929;&amp;#x6211;&amp;#x4EEC;&amp;#x7EE7">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://sybang.github.io/2016/10/27/countzero/"/>
+
+
+  <title> 自定义view之_____启动页广告倒计时 | Melaka blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?02ab8766ad48de9845c9c6b7bb6be675";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Melaka blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-list">
+          <a href="/archives" rel="section">
+            
+            列表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-github">
+          <a href="https://github.com/sybang" rel="section">
+            
+            Github
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-email">
+          <a href="mailto:417802597@qq.com" rel="section">
+            
+            Email
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自定义view之_____启动页广告倒计时
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-27T20:27:40+08:00" content="2016-10-27">
+              2016-10-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/27/countzero/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/countzero/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="&#x4E0A;&#x4E00;&#x7BC7;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;view&#x7528;&#x6237;&#x5706;&#x5F27;&#x5B9E;&#x73B0;&#x8BA1;&#x6B65;view-&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5DE9;&#x56FA;-&#x5B9E;&#x73B0;App&#x7684;&#x542F;&#x52A8;&#x9875;&#x5E7F;&#x544A;&#x5012;&#x8BA1;view"><a href="#&#x4E0A;&#x4E00;&#x7BC7;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;view&#x7528;&#x6237;&#x5706;&#x5F27;&#x5B9E;&#x73B0;&#x8BA1;&#x6B65;view-&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5DE9;&#x56FA;-&#x5B9E;&#x73B0;App&#x7684;&#x542F;&#x52A8;&#x9875;&#x5E7F;&#x544A;&#x5012;&#x8BA1;view" class="headerlink" title="&#x4E0A;&#x4E00;&#x7BC7;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;view&#x7528;&#x6237;&#x5706;&#x5F27;&#x5B9E;&#x73B0;&#x8BA1;&#x6B65;view,&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5DE9;&#x56FA;,&#x5B9E;&#x73B0;App&#x7684;&#x542F;&#x52A8;&#x9875;&#x5E7F;&#x544A;&#x5012;&#x8BA1;view"></a>&#x4E0A;&#x4E00;&#x7BC7;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;view&#x7528;&#x6237;&#x5706;&#x5F27;&#x5B9E;&#x73B0;&#x8BA1;&#x6B65;view,&#x4ECA;&#x5929;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5DE9;&#x56FA;,&#x5B9E;&#x73B0;App&#x7684;&#x542F;&#x52A8;&#x9875;&#x5E7F;&#x544A;&#x5012;&#x8BA1;view</h5><h5 id="1-&#x663E;&#x793A;&#x5012;&#x8BA1;&#x65F6;&#x7684;&#x5706;&#x5F27;-&#x6548;&#x679C;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x8272;&#x5706;&#x5F27;"><a href="#1-&#x663E;&#x793A;&#x5012;&#x8BA1;&#x65F6;&#x7684;&#x5706;&#x5F27;-&#x6548;&#x679C;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x8272;&#x5706;&#x5F27;" class="headerlink" title="1:&#x663E;&#x793A;&#x5012;&#x8BA1;&#x65F6;&#x7684;&#x5706;&#x5F27;(&#x6548;&#x679C;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x8272;&#x5706;&#x5F27;)"></a>1:&#x663E;&#x793A;&#x5012;&#x8BA1;&#x65F6;&#x7684;&#x5706;&#x5F27;(&#x6548;&#x679C;&#x56FE;&#x4E2D;&#x7684;&#x7EA2;&#x8272;&#x5706;&#x5F27;)</h5><h5 id="2-&#x6309;&#x94AE;&#x5706;"><a href="#2-&#x6309;&#x94AE;&#x5706;" class="headerlink" title="2:&#x6309;&#x94AE;&#x5706;"></a>2:&#x6309;&#x94AE;&#x5706;</h5><h5 id="3-&#x5012;&#x8BA1;&#x65F6;&#x6570;&#x5B57;"><a href="#3-&#x5012;&#x8BA1;&#x65F6;&#x6570;&#x5B57;" class="headerlink" title="3:&#x5012;&#x8BA1;&#x65F6;&#x6570;&#x5B57;"></a>3:&#x5012;&#x8BA1;&#x65F6;&#x6570;&#x5B57;</h5><h5 id="4-&#x8BBE;&#x7F6E;&#x5012;&#x8BA1;&#x65F6;"><a href="#4-&#x8BBE;&#x7F6E;&#x5012;&#x8BA1;&#x65F6;" class="headerlink" title="4:&#x8BBE;&#x7F6E;&#x5012;&#x8BA1;&#x65F6;"></a>4:&#x8BBE;&#x7F6E;&#x5012;&#x8BA1;&#x65F6;</h5><h5 id="5-&#x5012;&#x8BA1;&#x65F6;&#x5706;&#x5F27;&#x52A8;&#x753B;"><a href="#5-&#x5012;&#x8BA1;&#x65F6;&#x5706;&#x5F27;&#x52A8;&#x753B;" class="headerlink" title="5:&#x5012;&#x8BA1;&#x65F6;&#x5706;&#x5F27;&#x52A8;&#x753B;"></a>5:&#x5012;&#x8BA1;&#x65F6;&#x5706;&#x5F27;&#x52A8;&#x753B;</h5><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by zhangfeng on 2016/10/27.</div><div class="line"> * &#x5E7F;&#x544A;&#x5012;&#x8BA1;&#x65F6; view</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AVDCountZeroView</span> <span class="keyword">extends</span> <span class="title">View</span> </span>{</div><div class="line">    <span class="keyword">private</span> Paint paint;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> paintWidth = <span class="number">5f</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> centerX;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> outRadius = dipToPx(<span class="number">20</span>);</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> insideRadius = dipToPx(<span class="number">19</span>);</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> textSize = dipToPx(<span class="number">15</span>);</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> countZeroNumber;</div><div class="line">    <span class="keyword">private</span> String describeStr = <span class="string">&quot;&#x8DF3;&#x8FC7;&quot;</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">float</span> currentCountZeroArc = <span class="number">360</span>;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AVDCountZeroView</span><span class="params">(Context context)</span> </span>{</div><div class="line">        <span class="keyword">super</span>(context);</div><div class="line">        init();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AVDCountZeroView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>{</div><div class="line">        <span class="keyword">super</span>(context, attrs);</div><div class="line">        init();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AVDCountZeroView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>{</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">        init();</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>{</div><div class="line">        paint = <span class="keyword">new</span> Paint();</div><div class="line">        paint.setAntiAlias(<span class="keyword">true</span>);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>{</div><div class="line">        <span class="keyword">super</span>.onDraw(canvas);</div><div class="line">        centerX = getWidth() / <span class="number">2</span>;</div><div class="line">        drawCountZeroCircle(canvas);</div><div class="line">        drawShowContent(canvas);</div><div class="line">        drawCountZeroText(canvas);</div><div class="line">        drawCountZeroNumber(canvas);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x7ED8;&#x5236;&#x5012;&#x8BA1;&#x65F6;&#x5706;&#x5F27;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> canvas</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawCountZeroCircle</span><span class="params">(Canvas canvas)</span> </span>{</div><div class="line">        paint.setStrokeWidth(paintWidth);</div><div class="line">        paint.setColor(Color.RED);</div><div class="line">        paint.setStyle(Paint.Style.STROKE);</div><div class="line">        RectF rectF = <span class="keyword">new</span> RectF(centerX - outRadius, centerX - outRadius, centerX + outRadius, centerX + outRadius);</div><div class="line">        canvas.drawArc(rectF, <span class="number">0</span>, currentCountZeroArc, <span class="keyword">false</span>, paint);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x7ED8;&#x5236;&#x663E;&#x793A;&#x5185;&#x5BB9;&#x5706;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> canvas</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawShowContent</span><span class="params">(Canvas canvas)</span> </span>{</div><div class="line">        paint.setStrokeWidth(paintWidth);</div><div class="line">        paint.setColor(Color.LTGRAY);</div><div class="line">        paint.setStyle(Paint.Style.FILL);</div><div class="line">        canvas.drawCircle(centerX, centerX, insideRadius, paint);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x7ED8;&#x5236;&#x63CF;&#x8FF0;&#x6587;&#x5B57;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> canvas</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawCountZeroText</span><span class="params">(Canvas canvas)</span> </span>{</div><div class="line">        paint.setTextSize(textSize);</div><div class="line">        paint.setColor(Color.RED);</div><div class="line">        paint.setStyle(Paint.Style.FILL);</div><div class="line">        Rect rect = <span class="keyword">new</span> Rect();</div><div class="line">        paint.getTextBounds(describeStr + <span class="string">&quot;&quot;</span>, <span class="number">0</span>, String.valueOf(describeStr).length(), rect);</div><div class="line">        canvas.drawText(describeStr + <span class="string">&quot;&quot;</span>, centerX - rect.width() / <span class="number">2</span>, centerX + rect.height() / <span class="number">2</span>, paint);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x7ED8;&#x5236;&#x5012;&#x8BA1;&#x65F6;&#x6570;&#x5B57;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> canvas</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">drawCountZeroNumber</span><span class="params">(Canvas canvas)</span> </span>{</div><div class="line">        paint.setTextSize(textSize);</div><div class="line">        paint.setColor(Color.GRAY);</div><div class="line">        paint.setStyle(Paint.Style.FILL);</div><div class="line">        Rect rect = <span class="keyword">new</span> Rect();</div><div class="line">        String tempStr = String.valueOf(countZeroNumber) + <span class="string">&quot;&#x79D2;&quot;</span>;</div><div class="line">        paint.getTextBounds(tempStr, <span class="number">0</span>, tempStr.length(), rect);</div><div class="line">        canvas.drawText(tempStr, centerX - rect.width() / <span class="number">2</span>, centerX + rect.height() / <span class="number">2</span> + dipToPx(<span class="number">35</span>), paint);</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * dp &#x8F6C;&#x6362;&#x6210;px</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> dip</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">dipToPx</span><span class="params">(<span class="keyword">float</span> dip)</span> </span>{</div><div class="line">        <span class="keyword">float</span> density = getContext().getResources().getDisplayMetrics().density;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (dip * density + <span class="number">0.5f</span> * (dip &gt;= <span class="number">0</span> ? <span class="number">1</span> : -<span class="number">1</span>));</div><div class="line">    }</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x6570;&#x5B57;&#x5012;&#x8BA1;&#x65F6;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> number</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCountZeroNumber</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> number)</span> </span>{</div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() {</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = number; i &gt;= <span class="number">0</span>; i--) {</div><div class="line">                    countZeroNumber = i;</div><div class="line">                    <span class="keyword">try</span> {</div><div class="line">                        Thread.sleep(<span class="number">1000</span>);</div><div class="line">                    } <span class="keyword">catch</span> (InterruptedException e) {</div><div class="line">                        e.printStackTrace();</div><div class="line">                    }</div><div class="line">                }</div><div class="line">            }</div><div class="line">        }).start();</div><div class="line"></div><div class="line">        setAinmation(<span class="number">360</span>, <span class="number">0</span>, number * <span class="number">1000</span>);</div><div class="line"></div><div class="line"></div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * &#x5012;&#x8BA1;&#x65F6;&#x5916;&#x5706;&#x52A8;&#x753B;</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> last</div><div class="line">     * <span class="doctag">@param</span> current</div><div class="line">     * <span class="doctag">@param</span> length</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setAinmation</span><span class="params">(<span class="keyword">float</span> last, <span class="keyword">float</span> current, <span class="keyword">int</span> length)</span> </span>{</div><div class="line">        ValueAnimator valueAnimator = ValueAnimator.ofFloat(last, current);</div><div class="line">        valueAnimator.setDuration(length);</div><div class="line">        valueAnimator.setTarget(currentCountZeroArc);</div><div class="line">        valueAnimator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() {</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator animation)</span> </span>{</div><div class="line">                currentCountZeroArc = (<span class="keyword">float</span>) animation.getAnimatedValue();</div><div class="line">                Log.i(<span class="string">&quot;------&quot;</span>, currentCountZeroArc + <span class="string">&quot;&quot;</span>);</div><div class="line">                postInvalidate();</div><div class="line">            }</div><div class="line">        });</div><div class="line">        valueAnimator.start();</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/27/stepview/" rel="next" title="自定义view之_____计步器">
+                <i class="fa fa-chevron-left"></i> 自定义view之_____计步器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/27/countzero/"
+           data-title="自定义view之_____启动页广告倒计时" data-url="https://sybang.github.io/2016/10/27/countzero/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Melaka" />
+          <p class="site-author-name" itemprop="name">Melaka</p>
+          <p class="site-description motion-element" itemprop="description">Melaka's blog | Android | JAVA</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#上一篇我们了解了自定义view用户圆弧实现计步view-今天我们继续巩固-实现App的启动页广告倒计view"><span class="nav-number">1.</span> <span class="nav-text">上一篇我们了解了自定义view用户圆弧实现计步view,今天我们继续巩固,实现App的启动页广告倒计view</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-显示倒计时的圆弧-效果图中的红色圆弧"><span class="nav-number">2.</span> <span class="nav-text">1:显示倒计时的圆弧(效果图中的红色圆弧)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-按钮圆"><span class="nav-number">3.</span> <span class="nav-text">2:按钮圆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-倒计时数字"><span class="nav-number">4.</span> <span class="nav-text">3:倒计时数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-设置倒计时"><span class="nav-number">5.</span> <span class="nav-text">4:设置倒计时</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-倒计时圆弧动画"><span class="nav-number">6.</span> <span class="nav-text">5:倒计时圆弧动画</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Melaka</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"melaka-blog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
